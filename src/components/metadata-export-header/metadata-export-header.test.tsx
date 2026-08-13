@@ -13,6 +13,6 @@ describe('MetaDataExportHeader', () => {
   it('renders the page header container', () => {
     render(<MetaDataExportHeader title="Metadata export packages" />);
 
-    expect(screen.getByTestId('stock-management-header')).toBeInTheDocument();
+    expect(screen.getByTestId('metadata-export-header')).toBeInTheDocument();
   });
 });
