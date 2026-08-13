@@ -21,7 +21,8 @@
     "verify": "yarn lint && yarn typescript && yarn test",
     "extract-translations": "i18next 'src/**/*.component.tsx' 'src/**/*.extension.tsx' 'src/**/*.modal.tsx' 'src/**/*.workspace.tsx' 'src/index.ts' --config ./tools/i18next-parser.config.js",
     "prettier": "prettier --config prettier.config.js --write \"src/**/*.{ts,tsx,css,scss}\"",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "verify": "yarn lint && yarn typescript && yarn test"
   },
   "keywords": [
     "openmrs",
@@ -92,6 +93,7 @@
     "sass": "^1.33.0",
     "single-spa": "^6.0.0",
     "swr": "^2.0.0",
+    "turbo": "^2.9.14",
     "typescript": "^5.9.3",
     "vitest": "^4.1.2"
   },
