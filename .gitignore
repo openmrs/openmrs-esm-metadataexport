@@ -27,6 +27,15 @@ lerna-debug.log*
 # Optional eslint cache
 .eslintcache
 
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # IDE
 .vscode/
 .idea/
@@ -36,4 +45,3 @@ lerna-debug.log*
 
 # OS
 Thumbs.db
-
