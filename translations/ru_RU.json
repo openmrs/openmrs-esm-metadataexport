@@ -1,4 +1,5 @@
 {
-  "metadataexportDescription": "Добро пожаловать на страницу экспорта Метаданных",
-  "metadataexportHeading": "ЭкспортМетаданных"
+  "welcomeToModule": "Добро пожаловать в metadataexport!",
+  "getStarted": "Начните с добавления роутов, расширений и компонент.",
+  "metadataexport": "Экспорт Метаданных"
 }
