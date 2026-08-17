@@ -53,11 +53,11 @@ const NewPackageWorkspace: React.FC<DefaultWorkspaceProps> = ({
     });
   }, []);
 
-  const isDirty = packageName.trim().length > 0 || description.trim().length > 0 || selectedDomains.size > 0;
+  const hasUnsavedChanges = packageName.trim().length > 0 || description.trim().length > 0 || selectedDomains.size > 0;
 
   useEffect(() => {
-    promptBeforeClosing(() => isDirty);
-  }, [isDirty, promptBeforeClosing]);
+    promptBeforeClosing(() => hasUnsavedChanges);
+  }, [hasUnsavedChanges, promptBeforeClosing]);
 
   const handleSubmit = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
