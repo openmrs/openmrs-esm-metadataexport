@@ -8,5 +8,15 @@
     }
   ],
   "extensions": [
+  ],
+  "workspaces": [
+    {
+      "name": "new-package-workspace",
+      "component": "newPackageWorkspace",
+      "title": "New package",
+      "type": "form",
+      "canMaximize": true,
+      "width": "narrow"
+    }
   ]
 }
