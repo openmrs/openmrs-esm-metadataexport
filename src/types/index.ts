@@ -9,3 +9,33 @@ export interface ExportPackageRequest {
   description: string;
   entries: Array<ExportPackageEntryDto>;
 }
+
+export interface ExportPackageEntry {
+  domain: MetadataDomain;
+  itemUuids: Array<string>;
+}
+
+export type ExportBuildStatus = 'PENDING' | 'RUNNING' | 'COMPLETED' | 'FAILED';
+
+export interface ExportPackageBuild {
+  uuid: string;
+  packageUuid: string;
+  version: number;
+  status: ExportBuildStatus;
+  dateCreated: number;
+  dateStarted: number | null;
+  dateCompleted: number | null;
+  errorMessage: string | null;
+  downloadUrl: string | null;
+  manifest: unknown | null;
+}
+
+export interface ExportPackage {
+  uuid: string;
+  name: string;
+  description: string;
+  retired: boolean;
+  dateCreated: number;
+  entries: Array<ExportPackageEntry>;
+  latestBuild: ExportPackageBuild | null;
+}

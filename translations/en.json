@@ -1,4 +1,5 @@
 {
+  "allDomains": "All domains",
   "cancel": "Cancel",
   "createPackage": "Create package",
   "creating": "Creating",
@@ -15,5 +16,6 @@
   "packageCreationFailed": "Failed to create package",
   "packageName": "Package name",
   "packageNamePlaceholder": "e.g. Core reference data",
+  "packages": "Packages",
   "selectAll": "Select all"
 }
