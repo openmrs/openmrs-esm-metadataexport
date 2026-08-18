@@ -12,10 +12,14 @@ import {
   TextArea,
   TextInput,
 } from '@carbon/react';
-import { type DefaultWorkspaceProps, showSnackbar, useLayoutType } from '@openmrs/esm-framework';
+import { useSWRConfig } from 'swr';
+import { type DefaultWorkspaceProps, restBaseUrl, showSnackbar, useLayoutType } from '@openmrs/esm-framework';
 import { formatDomainLabel, useDomains } from '../../domain-lookups/domain-lookups.resource';
 import { createPackage } from '../../packages/packages.resource';
 import styles from './new-package.workspace.scss';
+
+const packagesUrl = `${restBaseUrl}/metadataexport/packages`;
+const isPackagesCacheKey = (key: unknown) => typeof key === 'string' && key.startsWith(packagesUrl);
 
 const NewPackageWorkspace: React.FC<DefaultWorkspaceProps> = ({
   closeWorkspace,
@@ -23,6 +27,7 @@ const NewPackageWorkspace: React.FC<DefaultWorkspaceProps> = ({
   promptBeforeClosing,
 }) => {
   const { t } = useTranslation();
+  const { mutate } = useSWRConfig();
   const isTablet = useLayoutType() === 'tablet';
   const { domains, isLoading, error } = useDomains();
 
@@ -69,6 +74,8 @@ const NewPackageWorkspace: React.FC<DefaultWorkspaceProps> = ({
 
       try {
         await createPackage({ name: packageName.trim(), description: description.trim(), entries });
+        // Revalidate the packages list so the table shows the new package without a refresh.
+        await mutate(isPackagesCacheKey);
         showSnackbar({
           title: t('packageCreated', 'Package created'),
           subtitle: t('packageCreatedSubtitle', '{{name}} was created successfully', { name: packageName.trim() }),
@@ -88,7 +95,7 @@ const NewPackageWorkspace: React.FC<DefaultWorkspaceProps> = ({
         setIsSubmitting(false);
       }
     },
-    [allSelected, closeWorkspaceWithSavedChanges, description, packageName, selectedDomains, t],
+    [allSelected, closeWorkspaceWithSavedChanges, description, mutate, packageName, selectedDomains, t],
   );
 
   const isSubmitDisabled = packageName.trim().length === 0 || selectedDomains.size === 0 || isSubmitting;
