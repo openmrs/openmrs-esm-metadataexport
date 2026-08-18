@@ -12,3 +12,13 @@
   align-items: center;
   padding-right: layout.$spacing-03;
 }
+
+.right-justified-items {
+  @include type.type-style('body-compact-02');
+  color: colors.$gray-70;
+  margin: layout.$spacing-03;
+}
+
+.create-package-button {
+  background-color: $interactive-01;
+}

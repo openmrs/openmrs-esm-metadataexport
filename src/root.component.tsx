@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Metadataexport from './metadataexport.component';
 import Dashboard from './components/dashboard/home-dashboard.component';
 
 const Root: React.FC = () => (

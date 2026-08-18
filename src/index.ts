@@ -21,3 +21,7 @@ export const root = getAsyncLifecycle(() => import('./root.component'), options)
 // Modals
 
 // Workspaces
+export const newPackageWorkspace = getAsyncLifecycle(
+  () => import('./components/new-package/new-package.workspace'),
+  options,
+);
