@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { showSnackbar } from '@openmrs/esm-framework';
 import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 import { useDomains } from '../../domain-lookups/domain-lookups.resource';
-import { createPackage } from '../../add-packages/packages.resource';
+import { createPackage } from '../../packages/packages.resource';
 import NewPackageWorkspace from './new-package.workspace';
 
 vi.mock('../../domain-lookups/domain-lookups.resource', async (importOriginal) => ({

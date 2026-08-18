@@ -14,7 +14,7 @@ import {
 } from '@carbon/react';
 import { type DefaultWorkspaceProps, showSnackbar, useLayoutType } from '@openmrs/esm-framework';
 import { formatDomainLabel, useDomains } from '../../domain-lookups/domain-lookups.resource';
-import { createPackage } from '../../add-packages/packages.resource';
+import { createPackage } from '../../packages/packages.resource';
 import styles from './new-package.workspace.scss';
 
 const NewPackageWorkspace: React.FC<DefaultWorkspaceProps> = ({
