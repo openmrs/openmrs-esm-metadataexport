@@ -15,7 +15,7 @@ export interface ExportPackageEntry {
   itemUuids: Array<string>;
 }
 
-export type ExportBuildStatus = 'PENDING' | 'RUNNING' | 'COMPLETED' | 'FAILED';
+export type ExportBuildStatus = 'QUEUED' | 'RUNNING' | 'COMPLETED' | 'FAILED';
 
 export interface ExportPackageBuild {
   uuid: string;
