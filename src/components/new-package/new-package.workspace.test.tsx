@@ -12,7 +12,7 @@ vi.mock('../../domain-lookups/domain-lookups.resource', async (importOriginal) =
   useDomains: vi.fn(),
 }));
 
-vi.mock('../../add-packages/packages.resource', () => ({
+vi.mock('../../packages/packages.resource', () => ({
   createPackage: vi.fn(),
 }));
 
